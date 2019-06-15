@@ -156,7 +156,7 @@ void parseArguments (int argc, char** argv, int& number_threads, bool& print_tim
         printf("  %-30s %s\n", "-a", "ejecutar el programa usando todos los hilos de la máquina");
         exit(0);
       case '?':
-        if (optopt == 'c') {
+        if (optopt == 'n') {
           std::cerr << "Debes indicar el número de hilos\n";
         } else {
           std::cerr << "Opción desconocida\n";
