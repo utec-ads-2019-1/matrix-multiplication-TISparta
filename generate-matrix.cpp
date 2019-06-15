@@ -13,16 +13,16 @@ void printRandomMatrix (int n, int m) {
   std::cout << n << ' ' << m << '\n';
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < m; j++) {
-      printf("%2d ", getRandomNumber(MIN_VAL, MAX_VAL));
+      std::cout << getRandomNumber(MIN_VAL, MAX_VAL) << ' ';
     }
-    putchar('\n');
+    std::cout << '\n';
   }
 }
 
 int main (int argc, char* argv[]) {
   srand(time(0));
   if (argc == 1) {
-    puts("Debes ingresar como argumento la dimension de la matrices");
+    puts("Debes ingresar como argumento la dimensión de las matrices");
     return (-1);
   }
   int N = atoi(argv[1]);

@@ -7,9 +7,9 @@
 #include <sys/time.h>
 
 int n, m, p, q;
-int* A = NULL; // n x m
-int* B = NULL; // p x q
-int* C = NULL; // n x q if [m = p]
+int* A = nullptr; // n x m
+int* B = nullptr; // p x q
+int* C = nullptr; // n x q if [m = p]
 
 struct Parameters {
   int from, to;
@@ -23,12 +23,12 @@ void* compute (void* parameters);
 
 int main (int argc, char* argv[]) {
   if (argc == 1) {
-    puts("Debes ingresar como argumento el número de hilos");
+    std::cerr << "Debes ingresar como argumento el número de hilos\n";
     return (-1);
   }
   int number_threads = atoi(argv[1]);
   if (number_threads <= 0) {
-    puts("Numero de hilos invalido");
+    std::cerr << "Numero de hilos invalido\n";
     return (-1);
   }
   int print_time = 1;
@@ -38,7 +38,7 @@ int main (int argc, char* argv[]) {
   readA();
   readB();
   if (m != p) {
-    puts("No se pueden multiplicar las matrices");
+    std::cerr << "No se pueden multiplicar las matrices\n";
     return (-1);
   }
   int n_elements = n * q;
@@ -63,7 +63,7 @@ int main (int argc, char* argv[]) {
     parameters[t].to = to;
     int rc = pthread_create(&thread[t], NULL, compute, (void*)&parameters[t]);
     if (rc) {
-      fprintf(stderr, "ERROR codigo %d\n", rc);
+      std::cerr << "ERROR código " << rc;
       exit(-1);
     }
     from = to;
@@ -71,7 +71,7 @@ int main (int argc, char* argv[]) {
   for (t = 0; t < number_threads; t++) {
     int rc = pthread_join(thread[t], NULL);
     if (rc) {
-      fprintf(stderr, "ERROR codigo %d\n", rc);
+      std::cerr << "ERROR código " << rc;
       exit(-1);
     }
   }
@@ -87,7 +87,7 @@ int main (int argc, char* argv[]) {
 }
 
 void printMatrix (int* mat, int n, int m) {
-  std::cin >> n >> m;
+  std::cout << n << ' ' << m << '\n';
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < m; j++) {
       std::cout << mat[i * m + j] << ' ';
