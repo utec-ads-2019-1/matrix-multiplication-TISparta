@@ -10,7 +10,7 @@ do
   ./generate-matrix $M >sample.txt
   for n_thread in 1 2 4 8 16 32
   do
-    echo "Corriendo test para $n_thread hilos"
+    echo "Corriendo test para la multiplicacion de matrices de $M x $M usando $n_thread hilos"
     if [ "$(diff -w <(./simple <sample.txt) <(./multiplication -n $n_thread <sample.txt))" != "" ]
     then
       echo "Error en la multiplicacion"

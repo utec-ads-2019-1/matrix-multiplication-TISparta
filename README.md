@@ -64,3 +64,24 @@ Para correr el programa usando todos los hilos que tiene la computadora donde se
 ```bash
 ./multiplication -a -t <in.in
 ```
+
+Para correr una serie de tests aleatorios ejecutar
+```bash
+bash run
+```
+
+Usando el script anterior (por ahora se ha modificado para que no se ejecute esa parte) se obtuve los distintos tiempos que tomó multiplicar matrices aleatorios de
+5000 x 5000. Estos tiempos se puedes encontrar en `/times-obtained`
+
+Además, se realizó un programa en python obtener una gráfica de número de hilos vs Performance a partir de los datos obtenidos.
+
+Para generar la gráfica ejecutar
+```bash
+python3 graphics.py
+```
+
+Con lo anterior se obtuvo, en mi caso, el siguiente gráfico
+
+![](./graphics.jpg)
+
+Extra. Originalmente, este proyecto era un laboratorio del curso de Arquitectura de Computadoras, por ello hay un informe sobre este trabajo en [Informe.pdf](./Informe.pdf)

@@ -16,7 +16,7 @@ for n_threads in threads:
             y.append(1.0 / float(time))
             sum += float(time)
             cnt += 1
-        print("%d & %f \\\\" %(n_threads, sum / cnt))
+        print("Tiempo promedio cuando se uso %d hilos = %f" %(n_threads, sum / cnt))
 
 X = np.array(x).reshape(-1, 1)
 Y = np.array(y).reshape(-1, 1)
