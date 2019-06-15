@@ -6,6 +6,7 @@ make
 ```
 
 Sea A una matrix de n x m
+
 Sea B una matrix de p x q
 
 El formato de la entrada es:
@@ -67,11 +68,11 @@ Para correr el programa usando todos los hilos que tiene la computadora donde se
 
 Para correr una serie de tests aleatorios ejecutar
 ```bash
-bash run
+bash run.sh
 ```
 
-Usando el script anterior (por ahora se ha modificado para que no se ejecute esa parte) se obtuve los distintos tiempos que tomó multiplicar matrices aleatorios de
-5000 x 5000. Estos tiempos se puedes encontrar en `/times-obtained`
+Usando el script anterior (por ahora se ha modificado para que no se ejecute esa parte) se obtuvo los distintos tiempos que tomó multiplicar matrices aleatorios de
+5000 x 5000. Estos tiempos se puedes encontrar en [times-obtained](./times-obtained)
 
 Además, se realizó un programa en python obtener una gráfica de número de hilos vs Performance a partir de los datos obtenidos.
 
@@ -84,4 +85,4 @@ Con lo anterior se obtuvo, en mi caso, el siguiente gráfico
 
 ![](./graphics.jpg)
 
-Extra. Originalmente, este proyecto era un laboratorio del curso de Arquitectura de Computadoras, por ello hay un informe sobre este trabajo en [Informe.pdf](./Informe.pdf)
+**Extra.** Originalmente, este proyecto era un laboratorio del curso de Arquitectura de Computadoras, por ello hay un informe sobre este trabajo en [Informe.pdf](./Informe.pdf)
